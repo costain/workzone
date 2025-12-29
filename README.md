@@ -85,7 +85,7 @@ out/rq1/
 ## 5. RQ2: Feature Construction
 
 ```bash
-python build_rq2_features.py --config config.yaml
+python run_rq2.py --features out/rq2/rq2_features.csv --out_dir out/rq2
 ```
 
 Output:
