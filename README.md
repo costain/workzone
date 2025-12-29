@@ -1,5 +1,5 @@
 # Replication Package  
-**When AI Teammates Meet Code Review: Evidence from Agent-Authored Pull Requests**  
+**When AI Teammates Meet Code Review**  
 MSR 2026 (Anonymous Submission)
 
 This repository contains all code and analysis pipelines required to reproduce the results reported in the paper. The artifact supports:
@@ -38,6 +38,7 @@ pip install -r requirements.txt
 
 This artifact expects **AIDev v3** Parquet files to be placed in a directory named `AIDev/`.
 
+
 ### Required files
 ```
 AIDev/
@@ -51,7 +52,11 @@ AIDev/
   user.parquet
 ```
 
-> **Note:** The AIDev dataset is not redistributed with this artifact. Please obtain it from its official source and place the files as shown above.
+
+> **Note:** The AIDev dataset is not redistributed with this artifact. Please download
+> **AIDev v3** from its official Zenodo record  
+> https://zenodo.org/records/16919272 (DOI: 10.5281/zenodo.16919272), released on
+> November 5, 2025, and place the Parquet files as shown above.
 
 ---
 
