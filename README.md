@@ -29,7 +29,7 @@ Rather than treating agent contributions purely as code artifacts, we analyze th
 - Coordination stability
 - Reviewer engagement dynamics
 
-Paper reference: :contentReference[oaicite:1]{index=1}
+<!-- Paper reference: :contentReference[oaicite:1]{index=1} -->
 
 ---
 
