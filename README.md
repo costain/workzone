@@ -65,8 +65,6 @@ All models are associational, not causal.
 
 ## 📊 Data Source (AIDev v3)
 
-This study uses **AIDev v3**, a curated dataset of agent-authored pull requests.
-
 Dataset DOI:  
 https://doi.org/10.5281/zenodo.16919272  
 
@@ -102,6 +100,8 @@ source .venv/bin/activate        # macOS/Linux
 pip install -r requirements.txt
 ```
 
+---
+
 ### 2️⃣ Download and Place AIDev v3 Dataset
 
 Ensure the following directory structure exists:
@@ -118,6 +118,8 @@ AIDev/
   user.parquet
 ```
 
+---
+
 ### 3️⃣ Configure Dataset Path
 
 Ensure `config.yaml` contains:
@@ -127,10 +129,12 @@ data_dir: "AIDev"
 db_path: "aid_dev.duckdb"
 ```
 
+---
+
 ### 4️⃣ Run RQ1: Integration Outcomes and Decision Latency
 
 ```bash
-python run_rq1.py --config config.yaml
+python src/run_rq1.py --config config.yaml
 ```
 
 Outputs:
@@ -139,10 +143,12 @@ Outputs:
 out/rq1/
 ```
 
+---
+
 ### 5️⃣ Build RQ2 Feature Set
 
 ```bash
-python build_rq2_features.py --config config.yaml
+python src/build_rq2_features.py --config config.yaml
 ```
 
 Output:
@@ -151,10 +157,12 @@ Output:
 out/rq2/rq2_features.csv
 ```
 
+---
+
 ### 6️⃣ Run RQ2 Logistic Regression Models
 
 ```bash
-python run_rq2.py \
+python src/run_rq2.py \
   --features out/rq2/rq2_features.csv \
   --out_dir out/rq2
 ```
@@ -169,15 +177,17 @@ out/rq2/
   rq2_modelB_summary.txt
 ```
 
+---
+
 ### 7️⃣ Qualitative Analysis (Table 1)
 
-The qualitative analysis is based on reproducible sampling followed by manual coding.
+Run:
 
-Scripts:
-
-- `make_qual_sample.py`
-- `make_qual_sample_from_features.py`
-- `make_rq2_qual_ready.py`
+```bash
+python src/make_qual_sample.py --config config.yaml
+python src/make_qual_sample_from_features.py --config config.yaml
+python src/make_rq2_qual_ready.py --config config.yaml
+```
 
 Generated files:
 
@@ -186,10 +196,12 @@ rq2_qual_ready.csv
 coding_sheet_60Classified.csv
 ```
 
-### 8️⃣ Additional Statistics (Optional)
+---
+
+### 8️⃣ Additional Statistical Checks (Optional)
 
 ```bash
-python run_stats.py --config config.yaml
+python src/run_stats.py --config config.yaml
 ```
 
 ---
